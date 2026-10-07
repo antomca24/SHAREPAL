@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-ubuntu);
+
+  --color-brand-purple: #4a1978;
+  --color-brand-violet: #8b3dff;
+  --color-brand-blue: #1d4ae8;
+  --color-brand-lime: #b5f023;
+  --color-brand-navy: #0a0f3d;
+  --color-brand-orange: #e8621a;
+  --color-page: #f3f4f6;
+  --color-ink: #0b0b1e;
+
+  --animate-marquee: marquee 50s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+}
+
+body:has(dialog[open]),
+body:has([data-scroll-lock]) {
+  overflow: hidden;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
